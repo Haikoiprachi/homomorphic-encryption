@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHE Encryption Interface</title>
+
+    <!-- Link to External CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FHE Encryption and Arithmetic Operations</h1>
+
+        <div id="key-section">
+            <button onclick="generateKeys()">Generate Keys</button>
+            <div id="key-info" style="display:none;">
+                <h3>Your Keys</h3>
+                <p>Public Key: <span id="public-key"></span></p>
+                <p>Private Key: <span id="private-key"></span></p>
+            </div>
+        </div>
+
+        <div id="input-section">
+            <h3>Enter Two Values to Encrypt:</h3>
+            <input type="number" id="data-input-1" placeholder="Enter first value" />
+            <input type="number" id="data-input-2" placeholder="Enter second value" />
+            <button onclick="encryptData()">Encrypt Data</button>
+        </div>
+
+        <div id="operation-section" style="display:none;">
+            <h3>Select Arithmetic Operation:</h3>
+            <select id="operation-select">
+                <option value="add">Add</option>
+                <option value="multiply">Multiply</option>
+            </select>
+            <button onclick="performOperation()">Perform Operation</button>
+        </div>
+
+        <div id="output-section" style="display:none;">
+            <h3>Encrypted Result After Operation:</h3>
+            <p id="encrypted-output"></p>
+
+            <h3>Enter Private Key to Decrypt:</h3>
+            <input type="text" id="private-key-input" placeholder="Enter your private key" />
+            <button onclick="decryptData()">Decrypt Output</button>
+            <p id="decrypted-output" style="display:none;"></p>
+        </div>
+    </div>
+
+    <!-- Link to External JavaScript File -->
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.0/bignumber.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
